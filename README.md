@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212329012-582fa4c0-712b-47db-bfbf-6bb95a9f6f5f.png" width="500" alt="Movie Poster Banner"/>
+  <img src="C:\Users\ritti\Downloads\Movie Banner.jpg" width="500" alt="Movie Poster Banner"/>
 </p>
 
 ---
