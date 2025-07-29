@@ -1,134 +1,126 @@
----
-<!-- Banner Image -->
-<p align="center">
-  <img src="images/banner.jpg" alt="Movie Recommendation Banner" width="100%">
-</p>
+<!-- README.md -->
 
-<h1 align="center">🎬 Movie Recommendation System 📽️</h1>
-
-<p align="center">
-  <b>🔍 Discover the best movies tailored to your taste using Natural Language Processing (NLP) & Content-Based Filtering! 🎯</b>
-</p>
+<div align="center">
+  <img src="Movie Banner.jpg" alt="Movie Banner" style="width:100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+  <h1 style="font-family: 'Segoe UI', sans-serif; color: #d7335f; font-size: 3em; margin-top: 20px;">🎬 Movie Recommendation System</h1>
+  <p style="font-size: 1.3em; color: #444;">Built using <b>TF-IDF + Cosine Similarity</b> with an interactive and data-rich approach!</p>
+</div>
 
 ---
 
-## 🧠 Project Overview
+## 📂 Overview
+This project provides personalized movie recommendations based on **content-based filtering** using **text similarity**. It includes:
 
-This project leverages **TF-IDF**, **cosine similarity**, and **movie metadata** to provide content-based movie recommendations. It also includes advanced data visualizations to better understand the dataset, such as:
-
-- 📊 Genre Distributions
-- ☁️ Word Clouds
-- 🔠 Top Words in Overviews
-- 🔥 Longest Movie Overviews
-
-> Built with ❤️ using Python, Pandas, Matplotlib, Seaborn, and Scikit-learn.
+- 🔍 TF-IDF vectorization of movie overviews
+- 🎯 Cosine similarity to find most similar titles
+- 📊 Beautiful visualizations of genres and words
+- 🌐 Interactive, scalable and easy-to-extend pipeline
 
 ---
 
-## 📁 Dataset Used
+## 📁 Dataset
+Kaggle: [The Movies Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset) 🎥
 
-> 🔗 [TMDb 5000 Movie Dataset - Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
-
+Files used:
 - `movies_metadata.csv`
-- `credits.csv`
 - `keywords.csv`
-
-We extracted a **subset of 2000 movies** to ensure faster computation.
-
----
-
-## ⚙️ Technologies Used
-
-| Technology       | Description                             |
-|------------------|-----------------------------------------|
-| 🐍 Python         | Programming Language                    |
-| 🧾 Pandas         | Data Manipulation                       |
-| 📊 Matplotlib     | Data Visualization                      |
-| 🌊 Seaborn        | Statistical Plots                       |
-| 💬 Scikit-learn   | TF-IDF Vectorizer & Cosine Similarity  |
-| ☁️ WordCloud      | Text Visualizations                     |
+- `credits.csv`
 
 ---
 
-## 🔍 How It Works
-
-1. **Data Cleaning** - Removing nulls & formatting genres.
-2. **Text Vectorization** - Using TF-IDF on movie overviews.
-3. **Similarity Calculation** - Cosine similarity to find movie neighbors.
-4. **Recommendation Function** - Input movie returns similar titles.
+## 🧰 Tech Stack
+- Python 🐍
+- Pandas
+- Scikit-learn 🔬
+- Seaborn & Matplotlib 📈
+- WordCloud ☁️
+- Jupyter Notebook
 
 ---
 
-## 📌 Example Visualizations
+## 📸 Visualizations
 
-### 📈 Genre Distribution
-<img src="images/genre_bar.png" width="60%">
+### 🎞️ Top 10 Longest Movie Overviews
+<img src="Top 10 Longest Movie Overviews" alt="Longest Overviews" width="100%">
 
-### 📘 Top 10 Longest Movie Overviews
-<img src="images/longest_overviews.png" width="60%">
+### 📊 Genre Distribution
+<img src="Genre Distribution" alt="Genre Distribution" width="100%">
 
 ### ☁️ Word Cloud of Genres
-<img src="images/wordcloud_genres.png" width="60%">
+<img src="Word Cloud of Genres" alt="Genre WordCloud" width="100%">
 
-### 🔠 Top 20 Common Words in Overviews
-<img src="images/top_words.png" width="60%">
-
----
-
-## 💡 Sample Output
-
-```
-🎬 Top 5 Recommendations for 'Inception':
-1. The Manchurian Candidate
-2. Mulholland Falls
-3. Heat
-4. Desperado
-5. Dingo
-```
+### 🧠 Top 20 Common Words in Overviews
+<img src="Top 20 Common Words in Overviews" alt="Word Frequency" width="100%">
 
 ---
 
-## 🧩 Project Structure
+## 🔄 How It Works
+```python
+# TF-IDF Vectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import linear_kernel
 
+# Build similarity matrix
+vectorizer = TfidfVectorizer(stop_words='english')
+tfidf_matrix = vectorizer.fit_transform(df['overview'])
+cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
+
+# Recommendation function
+def recommend_movies(title):
+    idx = indices[title]
+    sim_scores = list(enumerate(cosine_sim[idx]))
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    sim_scores = sim_scores[1:6]
+    movie_indices = [i[0] for i in sim_scores]
+    return df['title'].iloc[movie_indices]
 ```
-├── README.md
-├── movie_recommender.ipynb
-├── movies_metadata.csv
-├── images/
-│   ├── banner.jpg
+
+---
+
+## ✅ Sample Output
+
+🎥 Recommendations for **"Inception"**:
+- The Prestige
+- Interstellar
+- Memento
+- The Matrix
+- The Thirteenth Floor
+
+---
+
+## 📂 Project Structure
+```bash
+📁 Movie-Recommendation-System/
+├── 📜 movie_recommender.ipynb
+├── 📊 visualizations/
 │   ├── genre_bar.png
-│   ├── longest_overviews.png
-│   ├── top_words.png
-│   └── wordcloud_genres.png
+│   ├── wordcloud.png
+│   ├── top_overviews.png
+│   └── common_words.png
+├── 📄 README.md
+├── 📁 dataset/
+│   ├── movies_metadata.csv
+│   ├── credits.csv
+│   └── keywords.csv
 ```
 
 ---
 
-## 🚀 How to Run
-
-1. Clone the repo or download the files
-2. Open `movie_recommender.ipynb` in **Jupyter Notebook** or **Google Colab**
-3. Run all cells to see:
-   - Visualizations
-   - Recommendation engine in action
+## ✨ Features
+- Clean interface for recommendations
+- Explorable visuals
+- Optimized for 2000+ entries 🧠
+- Easy to plug into web apps or APIs
 
 ---
 
-## 🤝 Contributions
-
-Feel free to fork the repo, open issues, or suggest improvements!
-
----
-
-## 📜 License
-
-Licensed under the [MIT License](LICENSE).
+## 🙌 Credits
+Thanks to [Kaggle Datasets](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset) and [Scikit-learn](https://scikit-learn.org/) ❤️
 
 ---
 
-<p align="center">
-  Made with ❤️ for movie lovers and data science enthusiasts.
-</p>
-
-
-<p align="center">Made with ❤️ by <strong>Rittik Gourav Raul from OUTR,BBSR</strong></p>
+<div align="center">
+  <img src="https://img.shields.io/badge/Project-Movie_Recommender-red?style=for-the-badge&logo=python" alt="Project Badge">
+  <img src="https://img.shields.io/badge/Built%20With-TF-IDF-yellow?style=for-the-badge&logo=scikit-learn" alt="Tech Badge">
+  <img src="https://img.shields.io/badge/Visualized%20With-Matplotlib-blue?style=for-the-badge&logo=seaborn" alt="Visual Badge">
+</div>
