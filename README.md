@@ -1,7 +1,6 @@
 <!-- README.md -->
 
-<style>
-  h1, h2, h3, p, li {
+
     font-family: 'Segoe UI', sans-serif;
   }
 </style>
