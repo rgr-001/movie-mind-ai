@@ -18,15 +18,6 @@
 
 ---
 
-![Python](https://img.shields.io/badge/Python-3.8-blue.svg)
-![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
-![Status](https://img.shields.io/badge/Project-Complete-brightgreen)
-![Model](https://img.shields.io/badge/Model-TF--IDF%20%2B%20Cosine%20Similarity-yellowgreen)
-![Visuals](https://img.shields.io/badge/Visuals-Matplotlib%20%26%20Seaborn-orange)
-![Level](https://img.shields.io/badge/Level-Beginner%20to%20Intermediate-lightgrey)
-
----
-
 ## 🎯 Overview
 Movie Mind AI is a content-based recommender system that understands movie overviews and delivers the most relevant movie suggestions based on your interests.
 
@@ -97,18 +88,6 @@ def recommend_movies(title):
 
 ---
 
-## 📊 Sample Output
-```bash
-🎥 Recommendations for "Inception":
-1. The Prestige
-2. Interstellar
-3. Memento
-4. The Matrix
-5. The Thirteenth Floor
-```
-
----
-
 ## 📂 Folder Structure
 ```
 📁 movie-mind-ai/
@@ -125,6 +104,14 @@ def recommend_movies(title):
 │   ├── credits.csv
 │   └── keywords.csv
 ```
+
+---
+
+## 🔮 Future Scope
+- 🔁 Integrate collaborative filtering with content-based models
+- 🧠 Add BERT-based embeddings for deeper understanding
+- 💻 Streamlit / Flask UI for live interaction
+- 📲 Deploy via GitHub Pages or Streamlit Cloud
 
 ---
 
