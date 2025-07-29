@@ -133,6 +133,7 @@ def recommend_movies(title):
   <img src="https://img.shields.io/badge/Visuals-Matplotlib%20%26%20Seaborn-orange?style=for-the-badge">
   <img src="https://img.shields.io/badge/Level-Beginner%20to%20Intermediate-lightgrey?style=for-the-badge">
 </div>
+
 ---
 
 ## 🌟 Show Some Love
