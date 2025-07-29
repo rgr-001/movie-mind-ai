@@ -1,113 +1,134 @@
-
-<h1 align="center">🎬 Movie Recommendation System</h1>
-
+---
+<!-- Banner Image -->
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10-blue?style=flat-square" />
-  <img src="https://img.shields.io/badge/Project-AIML Internship-purple?style=flat-square" />
-  <img src="https://img.shields.io/badge/Model-ContentBased-green?style=flat-square" />
+  <img src="images/banner.jpg" alt="Movie Recommendation Banner" width="100%">
 </p>
 
+<h1 align="center">🎬 Movie Recommendation System 📽️</h1>
+
 <p align="center">
-  <img src="C:\Users\ritti\Downloads\Movie Banner.jpg" width="500" alt="Movie Poster Banner"/>
+  <b>🔍 Discover the best movies tailored to your taste using Natural Language Processing (NLP) & Content-Based Filtering! 🎯</b>
 </p>
 
 ---
 
-## 🚀 Overview
+## 🧠 Project Overview
 
-This project is a **Content-Based Movie Recommendation System** built using:
+This project leverages **TF-IDF**, **cosine similarity**, and **movie metadata** to provide content-based movie recommendations. It also includes advanced data visualizations to better understand the dataset, such as:
 
-- 📘 TF-IDF Vectorizer
-- 🧮 Cosine Similarity
-- 🔠 Text Processing with Scikit-learn
-- 🎨 WordCloud, Bar Graphs & More
+- 📊 Genre Distributions
+- ☁️ Word Clouds
+- 🔠 Top Words in Overviews
+- 🔥 Longest Movie Overviews
 
-> 🔎 Trained on the popular **MovieLens Metadata Dataset** from Kaggle
-
----
-
-## 📂 Project Structure
-
-| File / Folder | Description |
-|---------------|-------------|
-| `Movie_Recommender_System.ipynb` | 📓 The main notebook |
-| `movies_metadata.csv` | 🎞️ Dataset |
-| `wordcloud.png` | ☁️ Genre cloud |
-| `project_report.md` | 📝 Project summary |
+> Built with ❤️ using Python, Pandas, Matplotlib, Seaborn, and Scikit-learn.
 
 ---
 
-## 📊 Sample Output
+## 📁 Dataset Used
 
-<details>
-<summary><b>🎥 Recommend 5 movies for 'Inception'</b></summary>
+> 🔗 [TMDb 5000 Movie Dataset - Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
+
+- `movies_metadata.csv`
+- `credits.csv`
+- `keywords.csv`
+
+We extracted a **subset of 2000 movies** to ensure faster computation.
+
+---
+
+## ⚙️ Technologies Used
+
+| Technology       | Description                             |
+|------------------|-----------------------------------------|
+| 🐍 Python         | Programming Language                    |
+| 🧾 Pandas         | Data Manipulation                       |
+| 📊 Matplotlib     | Data Visualization                      |
+| 🌊 Seaborn        | Statistical Plots                       |
+| 💬 Scikit-learn   | TF-IDF Vectorizer & Cosine Similarity  |
+| ☁️ WordCloud      | Text Visualizations                     |
+
+---
+
+## 🔍 How It Works
+
+1. **Data Cleaning** - Removing nulls & formatting genres.
+2. **Text Vectorization** - Using TF-IDF on movie overviews.
+3. **Similarity Calculation** - Cosine similarity to find movie neighbors.
+4. **Recommendation Function** - Input movie returns similar titles.
+
+---
+
+## 📌 Example Visualizations
+
+### 📈 Genre Distribution
+<img src="images/genre_bar.png" width="60%">
+
+### 📘 Top 10 Longest Movie Overviews
+<img src="images/longest_overviews.png" width="60%">
+
+### ☁️ Word Cloud of Genres
+<img src="images/wordcloud_genres.png" width="60%">
+
+### 🔠 Top 20 Common Words in Overviews
+<img src="images/top_words.png" width="60%">
+
+---
+
+## 💡 Sample Output
 
 ```
-1. Interstellar
-2. The Prestige
-3. Memento
-4. The Matrix
-5. The Dark Knight
+🎬 Top 5 Recommendations for 'Inception':
+1. The Manchurian Candidate
+2. Mulholland Falls
+3. Heat
+4. Desperado
+5. Dingo
 ```
 
-</details>
+---
+
+## 🧩 Project Structure
+
+```
+├── README.md
+├── movie_recommender.ipynb
+├── movies_metadata.csv
+├── images/
+│   ├── banner.jpg
+│   ├── genre_bar.png
+│   ├── longest_overviews.png
+│   ├── top_words.png
+│   └── wordcloud_genres.png
+```
 
 ---
 
-## 💻 Tech Stack
+## 🚀 How to Run
 
-- 🐍 Python
-- 📊 Pandas, NumPy
-- 🔠 Sklearn (TF-IDF, Cosine Similarity)
-- 📈 Matplotlib, Seaborn
-- ☁️ WordCloud
+1. Clone the repo or download the files
+2. Open `movie_recommender.ipynb` in **Jupyter Notebook** or **Google Colab**
+3. Run all cells to see:
+   - Visualizations
+   - Recommendation engine in action
 
 ---
 
-## 🌈 Visuals
+## 🤝 Contributions
+
+Feel free to fork the repo, open issues, or suggest improvements!
+
+---
+
+## 📜 License
+
+Licensed under the [MIT License](LICENSE).
+
+---
 
 <p align="center">
-  <img src="wordcloud.png" alt="Word Cloud" width="500"/>
+  Made with ❤️ for movie lovers and data science enthusiasts.
 </p>
 
-<p align="center">
-  <img src="genre_plot.png" alt="Top Genres" width="450"/>
-</p>
-
----
-
-## 🏁 How to Run
-
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/your-username/aiml-movie-recommender.git
-   cd aiml-movie-recommender
-   ```
-
-2. Open Jupyter Notebook  
-   ```bash
-   jupyter notebook Movie_Recommender_System.ipynb
-   ```
-
-3. Run all cells
-
----
-
-## 📌 Project Highlights
-
-- ✅ Content-Based Filtering using cosine similarity
-- 📝 Cleaned text and handled missing data
-- 🧠 TF-IDF applied to movie descriptions
-- 🎨 WordCloud to visualize genres
-- 🔍 Search function to recommend movies
-
----
-
-## 🔚 Final Words
-
-> ⭐ *"AI can't watch movies for you, but it can surely recommend the best ones!"*  
-> If you like this project, don't forget to ⭐ the repo.
-
----
 
 <p align="center">Made with ❤️ by <strong>Rittik Gourav Raul from OUTR,BBSR</strong></p>
