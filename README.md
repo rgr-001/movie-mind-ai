@@ -8,6 +8,15 @@
 </div>
 
 ---
+<div align="center">
+  <img src="https://img.shields.io/badge/Made%20With-Python-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/Model-TF--IDF%20%2B%20Cosine%20Similarity-yellowgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Visuals-Matplotlib%20%26%20Seaborn-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Level-Beginner%20to%20Intermediate-lightgrey?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Final-Project-critical?style=for-the-badge">
+</div>
+
+---
 
 ## 🎯 Overview
 Movie Mind AI is a content-based recommender system that understands movie overviews and delivers the most relevant movie suggestions based on your interests.
@@ -124,3 +133,7 @@ def recommend_movies(title):
   <img src="https://img.shields.io/badge/Visuals-Matplotlib%20%26%20Seaborn-orange?style=for-the-badge">
   <img src="https://img.shields.io/badge/Level-Beginner%20to%20Intermediate-lightgrey?style=for-the-badge">
 </div>
+---
+
+## 🌟 Show Some Love
+If you found this project useful, please ⭐ it and share it. Contributions, suggestions, and feedback are always welcome!
