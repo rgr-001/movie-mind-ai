@@ -1,54 +1,66 @@
 <!-- README.md -->
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/rgr-001/movie-mind-ai/main/Movie%20Banner.jpg" alt="Movie Banner" width="100%" style="border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-  <h1 style="font-family: 'Segoe UI', sans-serif; color: #d7335f; font-size: 3.5em; margin-top: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">🎬 Movie Mind AI</h1>
-  <p style="font-size: 1.4em; color: #555; font-weight: 500;">Your Intelligent Movie Recommendation System powered by Machine Learning & NLP</p>
+<style>
+  h1, h2, h3, p {
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .banner {
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.25);
+  }
+  .section {
+    padding: 20px 0;
+  }
+  .highlight {
+    background-color: #ffe6e6;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+</style>
+
+<div align="center" class="section">
+  <img src="https://raw.githubusercontent.com/rgr-001/movie-mind-ai/main/Movie%20Banner.jpg" alt="Movie Banner" width="100%" class="banner">
+  <h1 style="color:#d7335f; font-size: 3.5em;">🎬 Movie Mind AI</h1>
+  <p style="font-size: 1.3em; color: #222;">An AI-powered Smart Movie Recommender System</p>
+  <p class="highlight">✨ Built with 💛 by <strong>Rittik Gourav Raul</strong> | 🎓 OUTR, Bhubaneswar</p>
 </div>
 
 ---
 
-## 💡 Project Overview
+## 🎯 Overview
+Movie Mind AI is a content-based recommender system that understands movie overviews and delivers the most relevant movie suggestions based on your interests.
 
-Movie Mind AI uses smart Natural Language Processing techniques like **TF-IDF** and **Cosine Similarity** to recommend similar movies based on their descriptions. It also includes beautiful visualizations and genre insights to help you explore movie trends!
-
----
-
-## 🧠 Tech Stack
-
-| Tool           | Use Case                          |
-|----------------|-----------------------------------|
-| Python 🐍      | Main Programming Language         |
-| Pandas & NumPy | Data manipulation                 |
-| Scikit-learn 🔬| ML models and vectorization       |
-| Matplotlib 📊  | Data visualization                |
-| WordCloud ☁️   | Genre and keyword clouds          |
-| Jupyter 📓     | Notebook for development          |
+**Key Features:**
+- 🧠 Natural Language Understanding (TF-IDF + Cosine Similarity)
+- 📈 Beautiful Data Visualizations
+- ⚙️ Easy to use and extend
+- 🎯 Great for ML beginners and intermediates
 
 ---
 
-## 📦 Dataset Source
+## 📁 Dataset Used
+Source: [Kaggle - The Movies Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
 
-[Kaggle - The Movies Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
-
-**Used files:**
+Used Files:
 - `movies_metadata.csv`
 - `credits.csv`
 - `keywords.csv`
 
 ---
 
-## ✨ Key Features
+## 🧰 Technologies
 
-- 🎯 Content-based movie recommender using TF-IDF
-- 📑 Cosine similarity for overview matching
-- 🎨 Beautiful visual insights: genre charts, word clouds, frequency bars
-- ⚙️ Easy to customize and scale
-- 👤 Built with ❤️ by **Rittik Gourav Raul** from **OUTR, BBSR**
+| 📌 Component | 🔧 Tools |
+|-------------|----------|
+| Language | Python 🐍 |
+| Libraries | Pandas, Numpy, Scikit-learn 🔬 |
+| Visualization | Matplotlib, Seaborn, WordCloud 📊 |
+| Notebook | Jupyter 📒 |
 
 ---
 
-## 🖼️ Visualizations
+## 🖼️ Visual Insights
 
 ### 🎞️ Top 10 Longest Movie Overviews
 <img src="https://raw.githubusercontent.com/rgr-001/movie-mind-ai/main/Top%2010%20Longest%20Movie%20Overviews.png" alt="Longest Overviews" width="100%">
@@ -59,63 +71,57 @@ Movie Mind AI uses smart Natural Language Processing techniques like **TF-IDF** 
 ### ☁️ Word Cloud of Genres
 <img src="https://raw.githubusercontent.com/rgr-001/movie-mind-ai/main/Word%20Cloud%20of%20Genres.png" alt="Genre WordCloud" width="100%">
 
-### 📚 Top 20 Common Words in Overviews
+### 🧠 Top 20 Common Words in Overviews
 <img src="https://raw.githubusercontent.com/rgr-001/movie-mind-ai/main/Top%2020%20Common%20Words%20in%20Overviews.png" alt="Word Frequency" width="100%">
 
 ---
 
-## 🔁 How It Works
-
+## 🧠 How It Works
 ```python
-# Import libraries
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-# TF-IDF Vectorization
-tfidf = TfidfVectorizer(stop_words='english')
-tfidf_matrix = tfidf.fit_transform(df['overview'])
+# TF-IDF Vectorizer
+vectorizer = TfidfVectorizer(stop_words='english')
+tfidf_matrix = vectorizer.fit_transform(df['overview'])
 
-# Compute Cosine Similarity
+# Cosine Similarity
 cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
 
-# Recommendation function
 def recommend_movies(title):
     idx = indices[title]
     sim_scores = list(enumerate(cosine_sim[idx]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-    sim_scores = sim_scores[1:6]
-    movie_indices = [i[0] for i in sim_scores]
+    movie_indices = [i[0] for i in sim_scores[1:6]]
     return df['title'].iloc[movie_indices]
 ```
 
 ---
 
-## 🎥 Sample Output
-
+## 📊 Sample Output
 ```bash
-Recommendations for "Inception":
-1. Interstellar
-2. The Prestige
-3. The Matrix
-4. Memento
+🎥 Recommendations for "Inception":
+1. The Prestige
+2. Interstellar
+3. Memento
+4. The Matrix
 5. The Thirteenth Floor
 ```
 
 ---
 
-## 📁 Project Structure
-
-```bash
+## 📂 Folder Structure
+```
 📁 movie-mind-ai/
 ├── 📜 movie_recommender.ipynb
 ├── 📄 README.md
-├── 📊 Visualizations/
+├── 📊 visualizations
 │   ├── Movie Banner.jpg
 │   ├── Genre Distribution.png
 │   ├── Top 10 Longest Movie Overviews.png
 │   ├── Top 20 Common Words in Overviews.png
 │   └── Word Cloud of Genres.png
-├── 📁 dataset/
+├── 📁 dataset
 │   ├── movies_metadata.csv
 │   ├── credits.csv
 │   └── keywords.csv
@@ -123,23 +129,17 @@ Recommendations for "Inception":
 
 ---
 
-## 🏷️ Tags
-
-`#MovieRecommendation` `#MachineLearning` `#NLP` `#Python` `#TFIDF` `#CosineSimilarity` `#WordCloud` `#DataViz`
-
----
-
-## 🙌 Author
-
-Made with 💻 by **Rittik Gourav Raul**
-🎓 B.Tech Student, OUTR, Bhubaneswar
-🔗 [GitHub](https://github.com/rgr-001)
+## 🧑‍💻 Author
+📌 Developed by **Rittik Gourav Raul**  
+🎓 B.Tech, OUTR Bhubaneswar  
+📁 GitHub: [rgr-001](https://github.com/rgr-001)
 
 ---
 
+## 🏷️ Tags & Badges
 <div align="center">
-  <img src="https://img.shields.io/badge/Python-3.9-blue?style=for-the-badge&logo=python">
-  <img src="https://img.shields.io/badge/ML-Scikit--Learn-yellow?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Notebook-Jupyter-orange?style=for-the-badge&logo=jupyter">
-  <img src="https://img.shields.io/badge/NLP-TF--IDF%20%26%20Cosine%20Sim-lightgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Made%20With-Python-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/Model-TF--IDF%20%2B%20Cosine%20Similarity-yellowgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Visuals-Matplotlib%20%26%20Seaborn-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Level-Beginner%20to%20Intermediate-lightgrey?style=for-the-badge">
 </div>
