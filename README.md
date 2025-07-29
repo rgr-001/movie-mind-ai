@@ -1,33 +1,4 @@
 <!-- README.md -->
-<style>
-  h1, h2, h3, p {
-    font-family: 'Segoe UI', sans-serif;
-  }
-  .banner {
-    border-radius: 12px;
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.25);
-    animation: zoomIn 2s ease-in-out;
-  }
-  .section {
-    padding: 20px 0;
-  }
-  .highlight {
-    background-color: #ffe6e6;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    animation: pulse 1.5s infinite;
-  }
-  @keyframes zoomIn {
-    0% {transform: scale(0.9); opacity: 0;}
-    100% {transform: scale(1); opacity: 1;}
-  }
-  @keyframes pulse {
-    0% {background-color: #ffe6e6;}
-    50% {background-color: #ffcccc;}
-    100% {background-color: #ffe6e6;}
-  }
-</style>
 
 <div align="center" class="section">
   <img src="https://raw.githubusercontent.com/rgr-001/movie-mind-ai/main/Movie%20Banner.jpg" alt="Movie Banner" width="100%" class="banner">
