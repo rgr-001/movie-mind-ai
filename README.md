@@ -1,66 +1,72 @@
 <!-- README.md -->
 
 <div align="center">
-  <img src="https://github.com/your-username/your-repo-name/blob/main/Movie%20Banner.png?raw=true" alt="Movie Banner" width="100%" style="border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
-  <h1 style="color:#d63384; font-size:3rem; font-family:'Segoe UI', sans-serif;">🍿 Movie Recommendation System</h1>
-  <p style="font-size: 1.2rem; color: #555;">A visually rich and intelligent system to suggest movies you might love! 🚀</p>
+  <img src="https://raw.githubusercontent.com/rgr-001/movie-mind-ai/main/Movie%20Banner.jpg" alt="Movie Banner" width="100%" style="border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+  <h1 style="font-family: 'Segoe UI', sans-serif; color: #d7335f; font-size: 3em; margin-top: 20px;">🎬 Movie Mind AI</h1>
+  <p style="font-size: 1.3em; color: #444;">Smart Movie Recommendation System using TF-IDF, Cosine Similarity, and Visual Intelligence</p>
 </div>
 
 ---
 
-## 🔍 Overview
-🎥 Content-based filtering using TF-IDF and Cosine Similarity.
-✨ Includes:
-- Intelligent matching of similar movies
-- Data visualization with genre analysis & word insights
-- Simple, fast & accurate recommendations
+## 📂 Overview
+Movie Mind AI recommends movies by analyzing their overviews using natural language processing. Key highlights include:
+
+- 🧠 TF-IDF + Cosine Similarity for smart content matching
+- 📊 Data visualizations on genres and keywords
+- ☁️ Word clouds and bar charts
+- 🎯 Personalized suggestions based on description similarity
 
 ---
 
-## 📦 Dataset
-Kaggle: [The Movies Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
+## 📁 Dataset
+📦 Source: [Kaggle - The Movies Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
+
+Used files:
 - `movies_metadata.csv`
-- `keywords.csv`
 - `credits.csv`
+- `keywords.csv`
 
 ---
 
-## 💻 Tech Stack
-| Tool | Description |
-|------|-------------|
-| Python 🐍 | Core Language |
-| Scikit-learn ⚙️ | TF-IDF, Cosine Similarity |
-| Pandas | Data Handling 🧾 |
-| Matplotlib & Seaborn 📊 | Visuals & Insights |
-| WordCloud ☁️ | Genre & Word Visuals |
-| Jupyter Notebook 📓 | Implementation |
+## 🧰 Tech Stack
+- Python 🐍
+- Pandas, NumPy
+- Scikit-learn 🔬
+- Matplotlib & Seaborn 📊
+- WordCloud ☁️
+- Jupyter Notebook
 
 ---
 
-## 🌟 Visualizations
+## 📸 Visualizations
 
 ### 🎞️ Top 10 Longest Movie Overviews
-<img src="https://github.com/your-username/your-repo-name/blob/main/Top%2010%20Longest%20Movie%20Overviews.png?raw=true" alt="Longest Overviews" width="100%">
+<img src="https://raw.githubusercontent.com/rgr-001/movie-mind-ai/main/Top%2010%20Longest%20Movie%20Overviews.png" alt="Longest Overviews" width="100%">
 
 ### 📊 Genre Distribution
-<img src="https://github.com/your-username/your-repo-name/blob/main/Genre%20Distribution.png?raw=true" alt="Genre Distribution" width="100%">
+<img src="https://raw.githubusercontent.com/rgr-001/movie-mind-ai/main/Genre%20Distribution.png" alt="Genre Distribution" width="100%">
 
 ### ☁️ Word Cloud of Genres
-<img src="https://github.com/your-username/your-repo-name/blob/main/Word%20Cloud%20of%20Genres.png?raw=true" alt="Genre WordCloud" width="100%">
+<img src="https://raw.githubusercontent.com/rgr-001/movie-mind-ai/main/Word%20Cloud%20of%20Genres.png" alt="Genre WordCloud" width="100%">
 
 ### 🧠 Top 20 Common Words in Overviews
-<img src="https://github.com/your-username/your-repo-name/blob/main/Top%2020%20Common%20Words%20in%20Overviews.png?raw=true" alt="Top Words" width="100%">
+<img src="https://raw.githubusercontent.com/rgr-001/movie-mind-ai/main/Top%2020%20Common%20Words%20in%20Overviews.png" alt="Word Frequency" width="100%">
 
 ---
 
-## 🧠 How It Works
+## 🔄 How It Works
 ```python
-# TF-IDF Vectorization
-vectorizer = TfidfVectorizer(stop_words='english')
-tfidf_matrix = vectorizer.fit_transform(df['overview'])
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import linear_kernel
+
+# Vectorize overview
+tfidf = TfidfVectorizer(stop_words='english')
+tfidf_matrix = tfidf.fit_transform(df['overview'])
+
+# Cosine similarity
 cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
 
-# Recommendation Function
+# Recommendation function
 def recommend_movies(title):
     idx = indices[title]
     sim_scores = list(enumerate(cosine_sim[idx]))
@@ -73,56 +79,54 @@ def recommend_movies(title):
 ---
 
 ## ✅ Sample Output
-```bash
-Recommendations for 'Inception':
-1. The Prestige
-2. Interstellar
-3. Memento
-4. The Matrix
-5. The Thirteenth Floor
-```
+🎥 Recommendations for **"Inception"**:
+- The Prestige
+- Interstellar
+- Memento
+- The Matrix
+- The Thirteenth Floor
 
 ---
 
-## 📁 Project Structure
-```
-Movie-Recommendation-System/
-├── README.md
-├── movie_recommender.ipynb
-├── dataset/
+## 📂 Project Structure
+```bash
+📁 movie-mind-ai/
+├── 📜 movie_recommender.ipynb
+├── 📄 README.md
+├── 📊 visualizations/
+│   ├── Movie Banner.jpg
+│   ├── Genre Distribution.png
+│   ├── Top 10 Longest Movie Overviews.png
+│   ├── Top 20 Common Words in Overviews.png
+│   └── Word Cloud of Genres.png
+├── 📁 dataset/
 │   ├── movies_metadata.csv
 │   ├── credits.csv
 │   └── keywords.csv
-├── Genre Distribution.png
-├── Top 10 Longest Movie Overviews.png
-├── Word Cloud of Genres.png
-├── Top 20 Common Words in Overviews.png
-└── Movie Banner.png
 ```
 
 ---
 
-## 🚀 Features
-- 🎬 Content-based recommendation engine
-- 📈 Visual genre & overview analysis
-- 🧠 Optimized for 2,000+ movie entries
-- 📦 Easy to use & extend
+## ✨ Features
+- Lightweight, fast & intelligent recommender
+- Meaningful visual storytelling
+- Easy to extend for web or API integrations
+- Perfect for beginner to intermediate ML portfolios
 
 ---
 
 ## 🙌 Credits
-Thanks to [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset) & the open-source community ❤️
+Built using:
+- 🧪 Scikit-learn
+- 💻 Python & Jupyter
+- 📈 Matplotlib, Seaborn, WordCloud
+- 📂 [Kaggle Movies Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
 
 ---
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Language-Python-blue?style=for-the-badge&logo=python">
-  <img src="https://img.shields.io/badge/Framework-ScikitLearn-orange?style=for-the-badge&logo=scikit-learn">
-  <img src="https://img.shields.io/badge/Notebook-Jupyter-yellow?style=for-the-badge&logo=jupyter">
+  <img src="https://img.shields.io/badge/Made%20With-Python-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/Model-TF--IDF%20%2B%20Cosine%20Similarity-yellowgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Visuals-Matplotlib%20%26%20Seaborn-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Level-Beginner%20to%20Intermediate-lightgrey?style=for-the-badge">
 </div>
-
----
-
-> 📫 _Made with ❤️ by 
-**Rittik Gourav Raul**
-**OUTR,BBSR**
