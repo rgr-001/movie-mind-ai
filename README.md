@@ -18,6 +18,15 @@
 
 ---
 
+![Python](https://img.shields.io/badge/Python-3.8-blue.svg)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
+![Status](https://img.shields.io/badge/Project-Complete-brightgreen)
+![Model](https://img.shields.io/badge/Model-TF--IDF%20%2B%20Cosine%20Similarity-yellowgreen)
+![Visuals](https://img.shields.io/badge/Visuals-Matplotlib%20%26%20Seaborn-orange)
+![Level](https://img.shields.io/badge/Level-Beginner%20to%20Intermediate-lightgrey)
+
+---
+
 ## 🎯 Overview
 Movie Mind AI is a content-based recommender system that understands movie overviews and delivers the most relevant movie suggestions based on your interests.
 
